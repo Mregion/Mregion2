@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top left, #ffe4f0 0%, #f7f3ff 40%, #f4fbff 100%);
+            min-height: 100vh;
+            padding: 24px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: linear-gradient(135deg, #ffffff 0%, #fff5fb 40%, #f7f3ff 100%);
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 26px 32px 22px 32px;
+            margin-bottom: 40px;
+            border-top: 6px solid #f48fb1;
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 16px;
+        }
+
+        .brand-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #ffe4f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #f8bbd0;
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-text-main {
+            font-size: 1.4em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            background: linear-gradient(120deg, #f06292, #ba68c8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-text-sub {
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .header h1 {
+            font-size: 2.4em;
+            letter-spacing: 0.5px;
+            color: #444;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .header .subtitle {
+            font-size: 1em;
+            color: #777;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .reservation-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 6px;
+        }
+
+        .reservation-badge {
+            background: #fff;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 22px;
+            border-radius: 999px;
+            border: 1px solid #ffd1e1;
+            gap: 2px;
+        }
+
+        .reservation-badge p:first-child {
+            color: #d81b60;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .reservation-badge p:last-child {
+            color: #888;
+            font-size: 0.85em;
+            text-align: center;
+        }
+
+        /* SECTION TITLES */
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4em;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .section-title h2 {
+            font-size: 1.7em;
+            color: #333;
+        }
+
+        .section-note {
+            color: #777;
+            margin-bottom: 16px;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .section-icon.finger   { background: #ffe3ed; }
+        .section-icon.cups     { background: #efe3ff; }
+        .section-icon.mains    { background: #ffe7da; }
+        .section-icon.desserts { background: #e6f4ff; }
+
+        /* GRID & CARDS */
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .menu-item {
+            background: #ffffff;
+            padding: 18px 18px 16px 18px;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+            cursor: pointer;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .menu-item:hover {
+            box-shadow: 0 10px 26px rgba(0,0,0,0.07);
+            border-color: #f8bbd0;
+            transform: translateY(-3px);
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .menu-item h3 {
+            font-size: 1.05em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .menu-item .price {
+            color: #f06292;
+            font-size: 1.05em;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .menu-item .serves {
+            color: #9b9b9b;
+            font-size: 0.8em;
+        }
+
+        .item-desc {
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 2px;
+        }
+
+        /* MODAL */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 24px;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            border-radius: 22px;
+            max-width: 720px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+            animation: popIn 0.22s ease-out;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: translateY(10px) scale(0.97);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #ffe0ec, #f3e5f5);
+            padding: 24px 26px;
+            border-bottom: 2px solid #f48fb1;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-radius: 22px 22px 0 0;
+            z-index: 2;
+        }
+
+        .modal-header h2 {
+            font-size: 1.7em;
+            color: #333;
+        }
+
+        .modal-header .price {
+            font-size: 1.4em;
+            color: #c2185b;
+            font-weight: 700;
+            margin-top: 6px;
+        }
+
+        .modal-header .serves {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 4px;
+        }
+
+        .close-btn {
+            background: #ffffff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 999px;
+            font-size: 1.4em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .close-btn:hover {
+            background: #f8c6db;
+        }
+
+        .modal-body {
+            padding: 22px 26px 26px 26px;
+        }
+
+.image-placeholder {
+    width: 100%;
+    background: #fdf6fa;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    border: 1px solid #f0d4df;
+    overflow: hidden;
+    padding: 0;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;        /* CRITICAL: image keeps its proportion */
+    max-height: 85vh;    /* fills screen but never overflows */
+    object-fit: contain; /* shows the WHOLE image, no cropping */
+    display: block;
+    border-radius: 16px;
+}
+
+
+        .detail-section h3 {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .detail-section .content {
+            padding: 16px 18px;
+            border-radius: 12px;
+            color: #555;
+            line-height: 1.6;
+            background: #fff5fa;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+            }
+
+            .header {
+                padding: 22px 18px 18px 18px;
+            }
+
+            .brand-row {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .header h1 {
+                font-size: 2.1em;
+            }
+
+            .modal {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with logo + brand -->
+        <div class="header">
+            <div class="brand-row">
+                <div class="brand-left">
+                    <div class="logo-circle">
+                        <!-- put images/logo.png in your images folder -->
+                        <img src="images/logo.png" alt="Berry On Top logo">
+                    </div>
+                    <div>
+                        <div class="brand-text-main">BERRY ON TOP</div>
+                        <div class="brand-text-sub">homemade catering & sweets</div>
+                    </div>
+                </div>
+            </div>
+
+            <h1>Catering Menu</h1>
+            <p class="subtitle">Buffet & bites for your special moments</p>
+
+            <div class="reservation-row">
+                <div class="reservation-badge">
+                    <p>OPEN FOR RESERVATIONS</p>
+                    <p>Ideally 2 weeks in advance, especially for large orders. For last-minute requests, feel free to ask — we’ll see what’s possible.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Finger Food Section -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon finger">🍢</div>
+                <h2>Finger Food</h2>
+            </div>
+            <p class="section-note">
+                Prices are shown <strong>per piece</strong>. Minimum order: <strong>12 pieces per item</strong> (anything above is perfectly fine).
+            </p>
+            <div class="menu-grid" id="fingerFood"></div>
+        </div>
+
+        <!-- Mini Cups Section -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon cups">🥣</div>
+                <h2>Mini Cups</h2>
+            </div>
+            <p class="section-note">
+                Prices are <strong>per piece</strong>, with a minimum of <strong>12 cups per recipe</strong>. 
+                Can be served in cups, arranged on plates, or in <em>jattat</em> — just tell us your preference.
+            </p>
+            <div class="menu-grid" id="miniCups"></div>
+        </div>
+
+        <!-- Mains Section -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon mains">🍽️</div>
+                <h2>Mains</h2>
+            </div>
+            <p class="section-note">
+                Trays sized to serve around <strong>12–15 people</strong>. Ideal as the main warm dish on your buffet.
+            </p>
+            <div class="menu-grid" id="mains"></div>
+        </div>
+
+        <!-- Desserts Section -->
+        <div class="section">
+            <div class="section-title">
+                <div class="section-icon desserts">🧁</div>
+                <h2>Dessert Bites</h2>
+            </div>
+            <p class="section-note">
+                Dessert prices are <strong>per piece / cup</strong>, with a minimum of <strong>12 pieces per flavour</strong>.
+            </p>
+            <div class="menu-grid" id="desserts"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 id="modalTitle"></h2>
+                    <div class="price" id="modalPrice"></div>
+                    <div class="serves" id="modalServes"></div>
+                </div>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="image-placeholder" id="modalImageWrapper">
+                    <img id="modalImage" class="modal-image" src="" alt="Dish image">
+                </div>
+
+                <div class="detail-section">
+                    <h3>Description</h3>
+                    <div class="content" id="modalDescription"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuData = {
+        fingerFood: [
+            { name: 'Fajitas', price: '2.00€', description: 'Soft tortillas filled with seasoned meat and vegetables.'},
+            { name: 'Mini Pizza', price: '1.25€', description: 'Mini bites with tomato sauce, cheese and toppings.', image: 'images/Mini Pizza.png' },
+            { name: 'Crispy Bites', price: '1.83€', description: 'Assorted crunchy appetisers with dipping sauces.', image: 'images/Crispy Bites.png' },
+            { name: 'Beef Burger', price: '2.00€', description: 'Mini beef burgers with cheese and sauce.', image: 'images/Beef Burger.png' },
+            { name: 'Lahem Baajin', price: '1.50€', description: 'Flatbread topped with spiced minced meat.', image: 'images/Lahem Baajin.png' },
+            { name: 'Fatayer Sabenikh', price: '1.50€', description: 'Spinach pastries with a savoury filling.', image: 'images/Fatayer Sabenikh.png' },
+            { name: 'Beef Samboussek', price: '1.25€', description: 'Crispy pastries stuffed with minced beef.', image: 'images/Beef Samboussek.png' },
+            { name: 'Cheese Sammboussek', price: '1.17€', description: 'Golden pastry stuffed with cheese.', image: 'images/Cheese Sammboussek.png' },
+            { name: 'Honey Chicken Burger', price: '2.00€', description: 'Honey-glazed chicken mini burger.', image: 'images/Honey Chicken Burger.png' }
+        ],
+
+        miniCups: [
+            { name: 'Fatteh', price: '1.25€', description: 'Layered yoghurt, chickpeas and toasted bread.', image: 'images/Fatteh.png' },
+            { name: 'Hommus', price: '0.83€', description: 'Creamy hummus in mini cups.', image: 'images/Hommus.png' },
+            { name: 'Fattoush', price: '1.25€', description: 'Fresh salad with toasted bread.', image: 'images/Fattoush.png' },
+            { name: 'Tabbouleh', price: '1.25€', description: 'Parsley, bulgur and tomato salad.', image: 'images/Tabbouleh.png' },
+            { name: 'Tuna Salad', price: '1.25€', description: 'Tuna salad served in mini cups.', image: 'images/Tuna Salad.png' },
+            { name: 'Caesar Salad', price: '1.25€', description: 'Classic Caesar salad cup.', image: 'images/Caesar Salad.png' },
+            { name: 'Baba Ganoug', price: '0.83€', description: 'Smoky aubergine dip.', image: 'images/Baba Ganoug.png' },
+            { name: 'Waraa Einab', price: '1.25€', description: 'Stuffed vine leaves.', image: 'images/Waraa Einab.png' },
+            { name: 'Kafta with Hummus', price: '1.50€', description: 'Kafta served over hummus.', image: 'images/Kafta with Hummus.png' }
+        ],
+
+        mains: [
+            { name: 'Beef Mansaf', price: '50€', description: 'Traditional rice dish with beef.', serves: 'Serves 12-15 persons', image: 'images/Beef Mansaf.png' },
+            { name: 'Beef Kabseh', price: '50€', description: 'Spiced rice with beef.', serves: 'Serves 12-15 persons', image: 'images/Beef Kabseh.png' },
+            { name: 'Beef Shawrma', price: '40€', description: 'Marinated sliced beef.', serves: 'Serves 12-15 persons', image: 'images/Beef Shawrma.png' },
+            { name: 'Chicken Mansaf', price: '45€', description: 'Rice topped with chicken and yoghurt sauce.', serves: 'Serves 12-15 persons', image: 'images/Chicken Mansaf.png' },
+            { name: 'Chicken Kabseh', price: '45€', description: 'Aromatic rice cooked with chicken.', serves: 'Serves 12-15 persons', image: 'images/Chicken Kabseh.png' },
+            { name: 'Chicken Shawrma', price: '35€', description: 'Marinated chicken slices.', serves: 'Serves 12-15 persons', image: 'images/Chicken Shawrma.png' }
+        ],
+
+        desserts: [
+            { name: 'Tiramisu', price: '1.83€', description: 'Classic tiramisu in cups.', image: 'images/Tiramisu.png' },
+            { name: 'Brownies', price: '1.67€', description: 'Rich fudgy brownies.', image: 'images/Brownies.png' },
+            { name: 'Cheesecake', price: '2.33€', description: 'Cheesecake cups: Lotus, strawberry, blueberry.', image: 'images/Cheesecake.png' },
+            { name: 'Pancake Bites', price: '1.67€', description: 'Mini pancake pieces.', image: 'images/Pancake Bites.png' },
+            { name: 'Fraisier Cake Cups', price: '2.00€', description: 'Strawberry cream cake cups.', image: 'images/Fraisier Cake Cups.png' },
+            { name: 'Chocolate Cake Cups', price: '2.00€', description: 'Moist chocolate cake cups.', image: 'images/Chocolate Cake Cups.png' },
+            { name: 'Chocopops Cake Cups', price: '2.00€', description: 'Chocolate cake with crisp cereals.', image: 'images/Chocopops Cake Cups.png' },
+            { name: 'Chocolate Dubai Tiramisu', price: '2.50€', description: 'Dubai-style tiramisu.', image: 'images/Chocolate Dubai Tiramisu.png' }
+        ]
+    };
+
+        function renderMenu() {
+            Object.keys(menuData).forEach(category => {
+                const container = document.getElementById(category);
+                menuData[category].forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'menu-item';
+                    itemDiv.onclick = () => openModal(item);
+
+                    itemDiv.innerHTML = `
+                        <div class="menu-item-header">
+                            <h3>${item.name}</h3>
+                            <span class="price">${item.price}</span>
+                        </div>
+                        ${item.serves ? `<div class="serves">${item.serves}</div>` : ''}
+                        ${item.description ? `<p class="item-desc">${item.description}</p>` : ''}
+                    `;
+
+                    container.appendChild(itemDiv);
+                });
+            });
+        }
+
+        function openModal(item) {
+            document.getElementById('modalTitle').textContent = item.name;
+            document.getElementById('modalPrice').textContent = item.price;
+            document.getElementById('modalServes').textContent = item.serves ? item.serves : '';
+            document.getElementById('modalDescription').textContent = item.description || '';
+
+            const modalImage = document.getElementById('modalImage');
+            const modalImageWrapper = document.getElementById('modalImageWrapper');
+
+            if (item.image) {
+                modalImage.src = item.image;
+                modalImage.alt = item.name;
+                modalImageWrapper.style.display = 'flex';
+            } else {
+                modalImage.src = '';
+                modalImage.alt = '';
+                modalImageWrapper.style.display = 'none';
+            }
+
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        renderMenu();
+    </script>
+</body>
+</html>
