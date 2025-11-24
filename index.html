@@ -379,6 +379,32 @@
                 padding: 16px;
             }
         }
+        /* Eye icon for items with photos */
+.eye-icon {
+    font-size: 1.1em;
+    color: #c2185b;
+    opacity: 0.65;
+    margin-left: 6px;
+    transition: 0.2s ease;
+}
+
+.menu-item:hover .eye-icon {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* Tiny photo badge */
+.photo-badge {
+    background: #ffe4f0;
+    color: #d81b60;
+    font-size: 0.72em;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-left: 6px;
+    border: 1px solid #f8bbd0;
+}
+
     </style>
 </head>
 <body>
@@ -553,16 +579,20 @@
                 itemDiv.onclick = () => openModal(item);
 
                 itemDiv.innerHTML = `
-                    <div class="menu-item-header">
-                        <h3>
-                            ${item.name}
-                            ${item.image ? '<img class="photo-indicator" src="icons/photo.svg" alt="photo">' : ''}
-                        </h3>
-                        <span class="price">${item.price}</span>
-                    </div>
-                    ${item.serves ? `<div class="serves">${item.serves}</div>` : ''}
-                    ${item.description ? `<p class="item-desc">${item.description}</p>` : ''}
-                `;
+    <div class="menu-item-header">
+        <h3>${item.name}</h3>
+        <div style="display:flex; align-items:center; gap:4px;">
+            <span class="price">${item.price}</span>
+            ${item.image ? `<span class="photo-badge">Photo</span>` : ''}
+            ${item.image ? `<span class="eye-icon">👁️</span>` : ''}
+        </div>
+    </div>
+
+    ${item.serves ? `<div class="serves">${item.serves}</div>` : ''}
+    ${item.description ? `<p class="item-desc">${item.description}</p>` : ''}
+`;
+
+        
 
                 container.appendChild(itemDiv);
             });
@@ -607,6 +637,7 @@
 
 </body>
 </html>
+
 
 
 
