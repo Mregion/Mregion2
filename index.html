@@ -484,11 +484,13 @@
     </div>
 
 .photo-indicator {
-    font-size: 1.15em;
+    width: 18px;
+    height: 18px;
     margin-left: 6px;
+    vertical-align: middle;
     opacity: 0.9;
-    display: inline-block;
 }
+
 
     
     <script>
@@ -548,7 +550,10 @@
 
                 itemDiv.innerHTML = `
                     <div class="menu-item-header">
-                        <h3>${item.name} ${item.image ? '<span class="photo-indicator">👁️</span>' : ''}</h3>
+                        <h3>
+                            ${item.name}
+                            ${item.image ? '<img class="photo-indicator" src="icons/photo.svg" alt="photo">' : ''}
+                        </h3>
                         <span class="price">${item.price}</span>
                     </div>
                     ${item.serves ? `<div class="serves">${item.serves}</div>` : ''}
@@ -595,8 +600,10 @@
     renderMenu();
 </script>
 
+
 </body>
 </html>
+
 
 
 
