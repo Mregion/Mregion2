@@ -541,6 +541,10 @@
     };
 
     function renderMenu() {
+        <h3>
+    ${item.name}
+    ${item.image ? '<img class="eye-indicator" src="icons/eye.svg" alt="photo">' : ''}
+</h3>
         Object.keys(menuData).forEach(category => {
             const container = document.getElementById(category);
             menuData[category].forEach(item => {
@@ -603,6 +607,7 @@
 
 </body>
 </html>
+
 
 
 
