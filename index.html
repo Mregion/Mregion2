@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catering Menu</title>
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -163,18 +167,20 @@
             font-size: 0.9em;
         }
 
-        .section-icon.finger   { background: #ffe3ed; }
-        .section-icon.cups     { background: #efe3ff; }
-        .section-icon.mains    { background: #ffe7da; }
+        .section-icon.finger { background: #ffe3ed; }
+        .section-icon.cups { background: #efe3ff; }
+        .section-icon.mains { background: #ffe7da; }
         .section-icon.desserts { background: #e6f4ff; }
 
-        /* GRID & CARDS */
+        /* GRID */
 
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 18px;
         }
+
+        /* CARD */
 
         .menu-item {
             background: #ffffff;
@@ -319,27 +325,27 @@
             padding: 22px 26px 26px 26px;
         }
 
-.image-placeholder {
-    width: 100%;
-    background: #fdf6fa;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 22px;
-    border: 1px solid #f0d4df;
-    overflow: hidden;
-    padding: 0;
-}
+        .image-placeholder {
+            width: 100%;
+            background: #fdf6fa;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            border: 1px solid #f0d4df;
+            overflow: hidden;
+            padding: 0;
+        }
 
-.modal-image {
-    width: 100%;
-    height: auto;        /* CRITICAL: image keeps its proportion */
-    max-height: 85vh;    /* fills screen but never overflows */
-    object-fit: contain; /* shows the WHOLE image, no cropping */
-    display: block;
-    border-radius: 16px;
-}
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            display: block;
+            border-radius: 16px;
+        }
 
         .detail-section h3 {
             font-size: 1.2em;
@@ -357,6 +363,7 @@
         }
 
         @media (max-width: 768px) {
+
             body {
                 padding: 16px;
             }
@@ -377,162 +384,393 @@
             .modal {
                 padding: 16px;
             }
+
         }
+
     </style>
+
 </head>
-<body>
+
+    <body>
+
     <div class="container">
+
         <!-- Header with logo + brand -->
         <div class="header">
+
             <div class="brand-row">
+
                 <div class="brand-left">
+
                     <div class="logo-circle">
                         <!-- put images/logo.png in your images folder -->
-                        <img src="images/logo.png" alt="Berry On Top logo">
+                        <img src="logo.png" alt="Berry On Top logo">
                     </div>
+
                     <div>
                         <div class="brand-text-main">BERRY ON TOP</div>
                         <div class="brand-text-sub">homemade catering & sweets</div>
                     </div>
+
                 </div>
+
             </div>
 
             <h1>Catering Menu</h1>
+
             <p class="subtitle">Buffet & bites for your special moments</p>
 
             <div class="reservation-row">
+
                 <div class="reservation-badge">
                     <p>OPEN FOR RESERVATIONS</p>
-                    <p>Ideally 2 weeks in advance, especially for large orders. For last-minute requests, feel free to ask — we’ll see what’s possible.</p>
+                    <p>
+                        Ideally 2 weeks in advance, especially for large orders.
+                        For last-minute requests, feel free to ask — we’ll see what’s possible.
+                    </p>
                 </div>
+
             </div>
+
         </div>
+
 
         <!-- Finger Food Section -->
         <div class="section">
+
             <div class="section-title">
                 <div class="section-icon finger">🍢</div>
                 <h2>Finger Food</h2>
             </div>
+
             <p class="section-note">
-                Prices are shown <strong>per piece</strong>. Minimum order: <strong>12 pieces per item</strong> (anything above is perfectly fine).
+                Prices are shown <strong>per piece</strong>.
+                Minimum order: <strong>12 pieces per item</strong> (anything above is perfectly fine).
             </p>
+
             <div class="menu-grid" id="fingerFood"></div>
+
         </div>
+
 
         <!-- Mini Cups Section -->
         <div class="section">
+
             <div class="section-title">
                 <div class="section-icon cups">🥣</div>
                 <h2>Mini Cups</h2>
             </div>
+
             <p class="section-note">
-                Prices are <strong>per piece</strong>, with a minimum of <strong>12 cups per recipe</strong>. 
+                Prices are <strong>per piece</strong>, with a minimum of <strong>12 cups per recipe</strong>.
                 Can be served in cups, arranged on plates, or in <em>jattat</em> — just tell us your preference.
             </p>
+
             <div class="menu-grid" id="miniCups"></div>
+
         </div>
+
 
         <!-- Mains Section -->
         <div class="section">
+
             <div class="section-title">
                 <div class="section-icon mains">🍽️</div>
                 <h2>Mains</h2>
             </div>
+
             <p class="section-note">
-                Trays sized to serve around <strong>12–15 people</strong>. Ideal as the main warm dish on your buffet.
+                Trays sized to serve around <strong>12–15 people</strong>.  
+                Ideal as the main warm dish on your buffet.
             </p>
+
             <div class="menu-grid" id="mains"></div>
+
         </div>
+
 
         <!-- Desserts Section -->
         <div class="section">
+
             <div class="section-title">
                 <div class="section-icon desserts">🧁</div>
                 <h2>Dessert Bites</h2>
             </div>
+
             <p class="section-note">
-                Dessert prices are <strong>per piece / cup</strong>, with a minimum of <strong>12 pieces per flavour</strong>.
+                Dessert prices are <strong>per piece / cup</strong>,
+                with a minimum of <strong>12 pieces per flavour</strong>.
             </p>
+
             <div class="menu-grid" id="desserts"></div>
+
         </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div>
-                    <h2 id="modalTitle"></h2>
-                    <div class="price" id="modalPrice"></div>
-                    <div class="serves" id="modalServes"></div>
-                </div>
-                <button class="close-btn" onclick="closeModal()">×</button>
-            </div>
-            <div class="modal-body">
-                <div class="image-placeholder" id="modalImageWrapper">
-                    <img id="modalImage" class="modal-image" src="" alt="Dish image">
-                </div>
+    </div> <!-- end container -->
 
-                <div class="detail-section">
-                    <h3>Description</h3>
-                    <div class="content" id="modalDescription"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+            <!-- MENU DATA + JAVASCRIPT -->
     <script>
+
         const menuData = {
-        fingerFood: [
-            { name: 'Fajitas', price: '2.00€', description: 'Soft tortillas filled with seasoned meat and vegetables.', image: 'images/Fajitas.png' },
-            { name: 'Mini Pizza', price: '1.25€', description: 'Mini bites with tomato sauce, cheese and toppings.', image: 'images/mini-pizza.png' },
-            { name: 'Crispy Bites', price: '1.83€', description: 'Assorted crunchy appetisers with dipping sauces.', image: 'images/Crispy Bites.png' },
-            { name: 'Beef Burger', price: '2.00€', description: 'Mini beef burgers with cheese and sauce.', image: 'images/beef-burger.png' },
-            { name: 'Lahem Baajin', price: '1.50€', description: 'Flatbread topped with spiced minced meat.', image: 'images/lahem-baajin.png' },
-            { name: 'Fatayer Sabenikh', price: '1.50€', description: 'Spinach pastries with a savoury filling.', image: 'images/fatayer-sabenikh.png' },
-            { name: 'Beef Samboussek', price: '1.25€', description: 'Crispy pastries stuffed with minced beef.', image: 'images/beef-samboussek.png' },
-            { name: 'Cheese Sammboussek', price: '1.17€', description: 'Golden pastry stuffed with cheese.', image: 'images/cheese-sammboussek.png' },
-            { name: 'Honey Chicken Burger', price: '2.00€', description: 'Honey-glazed chicken mini burger.', image: 'images/honey-chicken-burger.png' }
-        ],
 
-        miniCups: [
-            { name: 'Fatteh', price: '1.25€', description: 'Layered yoghurt, chickpeas and toasted bread.', image: 'images/fatteh.png' },
-            { name: 'Hommus', price: '0.83€', description: 'Creamy hummus in mini cups.', image: 'images/hommus.png' },
-            { name: 'Fattoush', price: '1.25€', description: 'Fresh salad with toasted bread.', image: 'images/fattoush.png' },
-            { name: 'Tabbouleh', price: '1.25€', description: 'Parsley, bulgur and tomato salad.', image: 'images/tabbouleh.png' },
-            { name: 'Tuna Salad', price: '1.25€', description: 'Tuna salad served in mini cups.', image: 'images/tuna-salad.png' },
-            { name: 'Caesar Salad', price: '1.25€', description: 'Classic Caesar salad cup.', image: 'images/Caesar Salad.png' },
-            { name: 'Baba Ganoug', price: '0.83€', description: 'Smoky aubergine dip.', image: 'images/baba-ganoug.png' },
-            { name: 'Waraa Einab', price: '1.25€', description: 'Stuffed vine leaves.', image: 'images/waraa-einab.png' },
-            { name: 'Kafta with Hummus', price: '1.50€', description: 'Kafta served over hummus.', image: 'images/Kafta with Hummus.png' }
-        ],
+            fingerFood: [
 
-        mains: [
-            { name: 'Beef Mansaf', price: '50€', description: 'Traditional rice dish with beef.', serves: 'Serves 12-15 persons', image: 'images/beef-mansaf.png' },
-            { name: 'Beef Kabseh', price: '50€', description: 'Spiced rice with beef.', serves: 'Serves 12-15 persons', image: 'images/beef-kabseh.png' },
-            { name: 'Beef Shawrma', price: '40€', description: 'Marinated sliced beef.', serves: 'Serves 12-15 persons', image: 'images/beef-shawrma.png' },
-            { name: 'Chicken Mansaf', price: '45€', description: 'Rice topped with chicken and yoghurt sauce.', serves: 'Serves 12-15 persons', image: 'images/chicken-mansaf.png' },
-            { name: 'Chicken Kabseh', price: '45€', description: 'Aromatic rice cooked with chicken.', serves: 'Serves 12-15 persons', image: 'images/chicken-kabseh.png' },
-            { name: 'Chicken Shawrma', price: '35€', description: 'Marinated chicken slices.', serves: 'Serves 12-15 persons', image: 'images/chicken-shawrma.png' }
-        ],
+                {
+                    name: 'Fajitas',
+                    price: '2.00€',
+                    description: 'Soft tortillas filled with seasoned meat and vegetables.'
+                },
 
-        desserts: [
-            { name: 'Tiramisu', price: '1.83€', description: 'Classic tiramisu in cups.', image: 'images/Tiramisu.png' },
-            { name: 'Brownies', price: '1.67€', description: 'Rich fudgy brownies.', image: 'images/Brownies.png' },
-            { name: 'Cheesecake', price: '2.33€', description: 'Cheesecake cups: Lotus, strawberry, blueberry.', image: 'images/Cheesecake.png' },
-            { name: 'Pancake Bites', price: '1.67€', description: 'Mini pancake pieces.', image: 'images/Pancake Bites.png' },
-            { name: 'Fraisier Cake Cups', price: '2.00€', description: 'Strawberry cream cake cups.', image: 'images/Fraisier Cake Cups.png' },
-            { name: 'Chocolate Cake Cups', price: '2.00€', description: 'Moist chocolate cake cups.', image: 'images/Chocolate Cake Cups.png' },
-            { name: 'Chocopops Cake Cups', price: '2.00€', description: 'Chocolate cake with crisp cereals.', image: 'images/Chocopops Cake Cups.png' },
-            { name: 'Chocolate Dubai Tiramisu', price: '2.50€', description: 'Dubai-style tiramisu.', image: 'images/Chocolate Dubai Tiramisu.png' }
-        ]
-    };
+                {
+                    name: 'Mini Pizza',
+                    price: '1.25€',
+                    description: 'Mini bites with tomato sauce, cheese and toppings.',
+                    image: 'image/mini-pizza.png'
+                },
+
+                {
+                    name: 'Crispy Bites',
+                    price: '1.83€',
+                    description: 'Assorted crunchy appetisers with dipping sauces.'
+                },
+
+                {
+                    name: 'Beef Burger',
+                    price: '2.00€',
+                    description: 'Mini beef burgers with cheese and sauce.',
+                    image: 'image/beef-burger.png'
+                },
+
+                {
+                    name: 'Lahem Baajin',
+                    price: '1.50€',
+                    description: 'Flatbread topped with spiced minced meat.',
+                    image: 'image/lahem-baajin.png'
+                },
+
+                {
+                    name: 'Fatayer Sabenikh',
+                    price: '1.50€',
+                    description: 'Spinach pastries with a savoury filling.',
+                    image: 'image/fatayer-sabenikh.png'
+                },
+
+                {
+                    name: 'Beef Samboussek',
+                    price: '1.25€',
+                    description: 'Crispy pastries stuffed with minced beef.',
+                    image: 'image/beef-samboussek.png'
+                },
+
+                {
+                    name: 'Cheese Sammboussek',
+                    price: '1.17€',
+                    description: 'Golden pastry stuffed with cheese.',
+                    image: 'image/cheese-sammboussek.png'
+                },
+
+                {
+                    name: 'Honey Chicken Burger',
+                    price: '2.00€',
+                    description: 'Honey-glazed chicken mini burger.'
+                }
+
+            ],
+
+
+
+            miniCups: [
+
+                {
+                    name: 'Fatteh',
+                    price: '1.25€',
+                    description: 'Layered yoghurt, chickpeas and toasted bread.'
+                },
+
+                {
+                    name: 'Hommus',
+                    price: '0.83€',
+                    description: 'Creamy hummus in mini cups.',
+                    image: 'image/hommus.png'
+                },
+
+                {
+                    name: 'Fattoush',
+                    price: '1.25€',
+                    description: 'Fresh salad with toasted bread.',
+                    image: 'image/fattoush.png'
+                },
+
+                {
+                    name: 'Tabbouleh',
+                    price: '1.25€',
+                    description: 'Parsley, bulgur and tomato salad.',
+                    image: 'image/tabbouleh.png'
+                },
+
+                {
+                    name: 'Tuna Salad',
+                    price: '1.25€',
+                    description: 'Tuna salad served in mini cups.'
+                },
+
+                {
+                    name: 'Caesar Salad',
+                    price: '1.25€',
+                    description: 'Classic Caesar salad cup.'
+                },
+
+                {
+                    name: 'Baba Ganoug',
+                    price: '0.83€',
+                    description: 'Smoky aubergine dip.',
+                    image: 'image/baba-ganoug.png'
+                },
+
+                {
+                    name: 'Waraa Einab',
+                    price: '1.25€',
+                    description: 'Stuffed vine leaves.',
+                    image: 'image/waraa-einab.png'
+                },
+
+                {
+                    name: 'Kafta with Hummus',
+                    price: '1.50€',
+                    description: 'Kafta served over hummus.'
+                }
+
+            ],
+
+
+
+            mains: [
+
+                {
+                    name: 'Beef Mansaf',
+                    price: '50€',
+                    description: 'Traditional rice dish with beef.',
+                    serves: 'Serves 12-15 persons',
+                    image: 'image/beef-mansaf.png'
+                },
+
+                {
+                    name: 'Beef Kabseh',
+                    price: '50€',
+                    description: 'Spiced rice with beef.',
+                    serves: 'Serves 12-15 persons',
+                    image: 'image/beef-kabseh.png'
+                },
+
+                {
+                    name: 'Beef Shawrma',
+                    price: '40€',
+                    description: 'Marinated sliced beef.',
+                    serves: 'Serves 12-15 persons',
+                    image: 'image/beef-shawrma.png'
+                },
+
+                {
+                    name: 'Chicken Mansaf',
+                    price: '45€',
+                    description: 'Rice topped with chicken and yoghurt sauce.',
+                    serves: 'Serves 12-15 persons',
+                    image: 'image/chicken-mansaf.png'
+                },
+
+                {
+                    name: 'Chicken Kabseh',
+                    price: '45€',
+                    description: 'Aromatic rice cooked with chicken.',
+                    serves: 'Serves 12-15 persons',
+                    image: 'image/chicken-kabseh.png'
+                },
+
+                {
+                    name: 'Chicken Shawrma',
+                    price: '35€',
+                    description: 'Marinated chicken slices.',
+                    serves: 'Serves 12-15 persons',
+                    image: 'image/chicken-shawrma.png'
+                }
+
+            ],
+
+
+
+            desserts: [
+
+                {
+                    name: 'Tiramisu',
+                    price: '1.83€',
+                    description: 'Classic tiramisu in cups.',
+                    image: 'image/Tiramisu.png'
+                },
+
+                {
+                    name: 'Brownies',
+                    price: '1.67€',
+                    description: 'Rich fudgy brownies.',
+                    image: 'image/Brownies.png'
+                },
+
+                {
+                    name: 'Cheesecake',
+                    price: '2.33€',
+                    description: 'Cheesecake cups: Lotus, strawberry, blueberry.',
+                    image: 'image/Cheesecake.png'
+                },
+
+                {
+                    name: 'Pancake Bites',
+                    price: '1.67€',
+                    description: 'Mini pancake pieces.',
+                    image: 'image/Pancake Bites.png'
+                },
+
+                {
+                    name: 'Fraisier Cake Cups',
+                    price: '2.00€',
+                    description: 'Strawberry cream cake cups.',
+                    image: 'image/Fraisier Cake Cups.png'
+                },
+
+                {
+                    name: 'Chocolate Cake Cups',
+                    price: '2.00€',
+                    description: 'Moist chocolate cake cups.',
+                    image: 'image/Chocolate Cake Cups.png'
+                },
+
+                {
+                    name: 'Chocopops Cake Cups',
+                    price: '2.00€',
+                    description: 'Chocolate cake with crisp cereals.',
+                    image: 'image/Chocopops Cake Cups.png'
+                },
+
+                {
+                    name: 'Chocolate Dubai Tiramisu',
+                    price: '2.50€',
+                    description: 'Dubai-style tiramisu.',
+                    image: 'image/Chocolate Dubai Tiramisu.png'
+                }
+
+            ]
+
+        };
+        /* ---------------------------
+           RENDER MENU FUNCTION
+        --------------------------- */
 
         function renderMenu() {
+
             Object.keys(menuData).forEach(category => {
+
                 const container = document.getElementById(category);
+
                 menuData[category].forEach(item => {
+
                     const itemDiv = document.createElement('div');
                     itemDiv.className = 'menu-item';
                     itemDiv.onclick = () => openModal(item);
@@ -542,16 +780,28 @@
                             <h3>${item.name}</h3>
                             <span class="price">${item.price}</span>
                         </div>
+
                         ${item.serves ? `<div class="serves">${item.serves}</div>` : ''}
+
                         ${item.description ? `<p class="item-desc">${item.description}</p>` : ''}
                     `;
 
                     container.appendChild(itemDiv);
+
                 });
+
             });
+
         }
 
+
+
+        /* ---------------------------
+           OPEN MODAL
+        --------------------------- */
+
         function openModal(item) {
+
             document.getElementById('modalTitle').textContent = item.name;
             document.getElementById('modalPrice').textContent = item.price;
             document.getElementById('modalServes').textContent = item.serves ? item.serves : '';
@@ -573,9 +823,21 @@
             document.getElementById('modal').classList.add('active');
         }
 
+
+
+        /* ---------------------------
+           CLOSE MODAL
+        --------------------------- */
+
         function closeModal() {
             document.getElementById('modal').classList.remove('active');
         }
+
+
+
+        /* ---------------------------
+           CLOSE MODAL WHEN CLICKING OUTSIDE
+        --------------------------- */
 
         document.getElementById('modal').addEventListener('click', function(e) {
             if (e.target === this) {
@@ -583,12 +845,14 @@
             }
         });
 
+
+
+        /* ---------------------------
+           INITIALIZE MENU
+        --------------------------- */
         renderMenu();
+
     </script>
+
 </body>
 </html>
-
-
-
-
-
