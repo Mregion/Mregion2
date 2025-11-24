@@ -483,12 +483,13 @@
         </div>
     </div>
 
-    .photo-indicator {
+.photo-indicator {
     font-size: 1.15em;
     margin-left: 6px;
-    opacity: 0.85;
+    opacity: 0.9;
     display: inline-block;
 }
+
     
     <script>
     const menuData = {
@@ -547,7 +548,7 @@
 
                 itemDiv.innerHTML = `
                     <div class="menu-item-header">
-                        <h3>${item.name} ${item.image ? '<span class="photo-indicator">🖼️</span>' : ''}</h3>
+                        <h3>${item.name} ${item.image ? '<span class="photo-indicator">👁️</span>' : ''}</h3>
                         <span class="price">${item.price}</span>
                     </div>
                     ${item.serves ? `<div class="serves">${item.serves}</div>` : ''}
@@ -593,8 +594,10 @@
 
     renderMenu();
 </script>
+
 </body>
 </html>
+
 
 
 
