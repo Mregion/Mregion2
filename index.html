@@ -513,124 +513,123 @@
 
 
     
-    <script>
-    const menuData = {
-        fingerFood: [
-            { name: 'Fajitas', price: '2.00€', description: 'Soft tortillas filled with seasoned meat and vegetables.'},
-            { name: 'Mini Pizza', price: '1.25€', description: 'Mini bites with tomato sauce, cheese and toppings.', image:'image/mini-pizza.png' },
-            { name: 'Crispy Bites', price: '1.83€', description: 'Assorted crunchy appetisers with dipping sauces.'},
-            { name: 'Beef Burger', price: '2.00€', description: 'Mini beef burgers with cheese and sauce.', image: 'image/beef-burger.png' },
-            { name: 'Lahem Baajin', price: '1.50€', description: 'Flatbread topped with spiced minced meat.', image: 'image/lahem-baajin.png' },
-            { name: 'Fatayer Sabenikh', price: '1.50€', description: 'Spinach pastries with a savoury filling.', image: 'image/fatayer-sabenikh.png' },
-            { name: 'Beef Samboussek', price: '1.25€', description: 'Crispy pastries stuffed with minced beef.', image: 'image/beef-samboussek.png' },
-            { name: 'Cheese Sammboussek', price: '1.17€', description: 'Golden pastry stuffed with cheese.', image: 'image/cheese-sammboussek.png' },
-            { name: 'Honey Chicken Burger', price: '2.00€', description: 'Honey-glazed chicken mini burger.'}
-        ],
+   <script>
+const menuData = {
+    fingerFood: [
+        { name: 'Fajitas', price: '2.00€', description: 'Soft tortillas filled with seasoned meat and vegetables.'},
+        { name: 'Mini Pizza', price: '1.25€', description: 'Mini bites with tomato sauce, cheese and toppings.', image:'image/mini-pizza.png' },
+        { name: 'Crispy Bites', price: '1.83€', description: 'Assorted crunchy appetisers with dipping sauces.'},
+        { name: 'Beef Burger', price: '2.00€', description: 'Mini beef burgers with cheese and sauce.', image: 'image/beef-burger.png' },
+        { name: 'Lahem Baajin', price: '1.50€', description: 'Flatbread topped with spiced minced meat.', image: 'image/lahem-baajin.png' },
+        { name: 'Fatayer Sabenikh', price: '1.50€', description: 'Spinach pastries with a savoury filling.', image: 'image/fatayer-sabenikh.png' },
+        { name: 'Beef Samboussek', price: '1.25€', description: 'Crispy pastries stuffed with minced beef.', image: 'image/beef-samboussek.png' },
+        { name: 'Cheese Sammboussek', price: '1.17€', description: 'Golden pastry stuffed with cheese.', image: 'image/cheese-sammboussek.png' },
+        { name: 'Honey Chicken Burger', price: '2.00€', description: 'Honey-glazed chicken mini burger.'}
+    ],
 
-        miniCups: [
-            { name: 'Fatteh', price: '1.25€', description: 'Layered yoghurt, chickpeas and toasted bread.'},
-            { name: 'Hommus', price: '0.83€', description: 'Creamy hummus in mini cups.', image: 'image/hommus.png' },
-            { name: 'Fattoush', price: '1.25€', description: 'Fresh salad with toasted bread.', image: 'image/fattoush.png' },
-            { name: 'Tabbouleh', price: '1.25€', description: 'Parsley, bulgur and tomato salad.', image: 'image/tabbouleh.png' },
-            { name: 'Tuna Salad', price: '1.25€', description: 'Tuna salad served in mini cups.'},
-            { name: 'Caesar Salad', price: '1.25€', description: 'Classic Caesar salad cup.'},
-            { name: 'Baba Ganoug', price: '0.83€', description: 'Smoky aubergine dip.', image: 'image/baba-ganoug.png' },
-            { name: 'Waraa Einab', price: '1.25€', description: 'Stuffed vine leaves.', image: 'image/waraa-einab.png' },
-            { name: 'Kafta with Hummus', price: '1.50€', description: 'Kafta served over hummus.'}
-        ],
+    miniCups: [
+        { name: 'Fatteh', price: '1.25€', description: 'Layered yoghurt, chickpeas and toasted bread.'},
+        { name: 'Hommus', price: '0.83€', description: 'Creamy hummus in mini cups.', image: 'image/hommus.png' },
+        { name: 'Fattoush', price: '1.25€', description: 'Fresh salad with toasted bread.', image: 'image/fattoush.png' },
+        { name: 'Tabbouleh', price: '1.25€', description: 'Parsley, bulgur and tomato salad.', image: 'image/tabbouleh.png' },
+        { name: 'Tuna Salad', price: '1.25€', description: 'Tuna salad served in mini cups.'},
+        { name: 'Caesar Salad', price: '1.25€', description: 'Classic Caesar salad cup.'},
+        { name: 'Baba Ganoug', price: '0.83€', description: 'Smoky aubergine dip.', image: 'image/baba-ganoug.png' },
+        { name: 'Waraa Einab', price: '1.25€', description: 'Stuffed vine leaves.', image: 'image/waraa-einab.png' },
+        { name: 'Kafta with Hummus', price: '1.50€', description: 'Kafta served over hummus.'}
+    ],
 
-        mains: [
-            { name: 'Beef Mansaf', price: '50€', description: 'Traditional rice dish with beef.', serves: 'Serves 12-15 persons', image: 'image/beef-mansaf.png' },
-            { name: 'Beef Kabseh', price: '50€', description: 'Spiced rice with beef.', serves: 'Serves 12-15 persons', image: 'image/beef-kabseh.png' },
-            { name: 'Beef Shawrma', price: '40€', description: 'Marinated sliced beef.', serves: 'Serves 12-15 persons', image: 'image/beef-shawrma.png' },
-            { name: 'Chicken Mansaf', price: '45€', description: 'Rice topped with chicken and yoghurt sauce.', serves: 'Serves 12-15 persons', image: 'image/chicken-mansaf.png' },
-            { name: 'Chicken Kabseh', price: '45€', description: 'Aromatic rice cooked with chicken.', serves: 'Serves 12-15 persons', image: 'image/chicken-kabseh.png' },
-            { name: 'Chicken Shawrma', price: '35€', description: 'Marinated chicken slices.', serves: 'Serves 12-15 persons', image: 'image/chicken-shawrma.png' }
-        ],
+    mains: [
+        { name: 'Beef Mansaf', price: '50€', description: 'Traditional rice dish with beef.', serves: 'Serves 12-15 persons', image: 'image/beef-mansaf.png' },
+        { name: 'Beef Kabseh', price: '50€', description: 'Spiced rice with beef.', serves: 'Serves 12-15 persons', image: 'image/beef-kabseh.png' },
+        { name: 'Beef Shawrma', price: '40€', description: 'Marinated sliced beef.', serves: 'Serves 12-15 persons', image: 'image/beef-shawrma.png' },
+        { name: 'Chicken Mansaf', price: '45€', description: 'Rice topped with chicken and yoghurt sauce.', serves: 'Serves 12-15 persons', image: 'image/chicken-mansaf.png' },
+        { name: 'Chicken Kabseh', price: '45€', description: 'Aromatic rice cooked with chicken.', serves: 'Serves 12-15 persons', image: 'image/chicken-kabseh.png' },
+        { name: 'Chicken Shawrma', price: '35€', description: 'Marinated chicken slices.', serves: 'Serves 12-15 persons', image: 'image/chicken-shawrma.png' }
+    ],
 
-        desserts: [
-            { name: 'Tiramisu', price: '1.83€', description: 'Classic tiramisu in cups.', image: 'image/Tiramisu.png' },
-            { name: 'Brownies', price: '1.67€', description: 'Rich fudgy brownies.', image: 'image/Brownies.png' },
-            { name: 'Cheesecake', price: '2.33€', description: 'Cheesecake cups: Lotus, strawberry, blueberry.', image: 'image/Cheesecake.png' },
-            { name: 'Pancake Bites', price: '1.67€', description: 'Mini pancake pieces.', image: 'image/Pancake Bites.png' },
-            { name: 'Fraisier Cake Cups', price: '2.00€', description: 'Strawberry cream cake cups.', image: 'image/Fraisier Cake Cups.png' },
-            { name: 'Chocolate Cake Cups', price: '2.00€', description: 'Moist chocolate cake cups.', image: 'image/Chocolate Cake Cups.png' },
-            { name: 'Chocopops Cake Cups', price: '2.00€', description: 'Chocolate cake with crisp cereals.', image: 'image/Chocopops Cake Cups.png' },
-            { name: 'Chocolate Dubai Tiramisu', price: '2.50€', description: 'Dubai-style tiramisu.', image: 'image/Chocolate Dubai Tiramisu.png' }
-        ]
-    };
+    desserts: [
+        { name: 'Tiramisu', price: '1.83€', description: 'Classic tiramisu in cups.', image: 'image/Tiramisu.png' },
+        { name: 'Brownies', price: '1.67€', description: 'Rich fudgy brownies.', image: 'image/Brownies.png' },
+        { name: 'Cheesecake', price: '2.33€', description: 'Cheesecake cups: Lotus, strawberry, blueberry.', image: 'image/Cheesecake.png' },
+        { name: 'Pancake Bites', price: '1.67€', description: 'Mini pancake pieces.', image: 'image/Pancake Bites.png' },
+        { name: 'Fraisier Cake Cups', price: '2.00€', description: 'Strawberry cream cake cups.', image: 'image/Fraisier Cake Cups.png' },
+        { name: 'Chocolate Cake Cups', price: '2.00€', description: 'Moist chocolate cake cups.', image: 'image/Chocolate Cake Cups.png' },
+        { name: 'Chocopops Cake Cups', price: '2.00€', description: 'Chocolate cake with crisp cereals.', image: 'image/Chocopops Cake Cups.png' },
+        { name: 'Chocolate Dubai Tiramisu', price: '2.50€', description: 'Dubai-style tiramisu.', image: 'image/Chocolate Dubai Tiramisu.png' }
+    ]
+};
 
-    function renderMenu() {
-        <h3>
-    ${item.name}
-    ${item.image ? '<img class="eye-indicator" src="icons/eye.svg" alt="photo">' : ''}
-</h3>
-        Object.keys(menuData).forEach(category => {
-            const container = document.getElementById(category);
-            menuData[category].forEach(item => {
-                const itemDiv = document.createElement('div');
-                itemDiv.className = 'menu-item';
-                itemDiv.onclick = () => openModal(item);
 
-                itemDiv.innerHTML = `
-    <div class="menu-item-header">
-        <h3>${item.name}</h3>
-        <div style="display:flex; align-items:center; gap:4px;">
-            <span class="price">${item.price}</span>
-            ${item.image ? `<span class="photo-badge">Photo</span>` : ''}
-            ${item.image ? `<span class="eye-icon">👁️</span>` : ''}
-        </div>
-    </div>
+function renderMenu() {
+    Object.keys(menuData).forEach(category => {
+        const container = document.getElementById(category);
 
-    ${item.serves ? `<div class="serves">${item.serves}</div>` : ''}
-    ${item.description ? `<p class="item-desc">${item.description}</p>` : ''}
-`;
+        menuData[category].forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'menu-item';
+            itemDiv.onclick = () => openModal(item);
 
-        
+            itemDiv.innerHTML = `
+                <div class="menu-item-header">
+                    <h3>${item.name}</h3>
+                    <div style="display:flex; align-items:center; gap:4px;">
+                        <span class="price">${item.price}</span>
+                        ${item.image ? `<span class="photo-badge">Photo</span>` : ''}
+                        ${item.image ? `<span class="eye-icon">👁️</span>` : ''}
+                    </div>
+                </div>
 
-                container.appendChild(itemDiv);
-            });
+                ${item.serves ? `<div class="serves">${item.serves}</div>` : ''}
+                ${item.description ? `<p class="item-desc">${item.description}</p>` : ''}
+            `;
+
+            container.appendChild(itemDiv);
         });
-    }
-
-    function openModal(item) {
-        document.getElementById('modalTitle').textContent = item.name;
-        document.getElementById('modalPrice').textContent = item.price;
-        document.getElementById('modalServes').textContent = item.serves ? item.serves : '';
-        document.getElementById('modalDescription').textContent = item.description || '';
-
-        const modalImage = document.getElementById('modalImage');
-        const modalImageWrapper = document.getElementById('modalImageWrapper');
-
-        if (item.image) {
-            modalImage.src = item.image;
-            modalImage.alt = item.name;
-            modalImageWrapper.style.display = 'flex';
-        } else {
-            modalImage.src = '';
-            modalImage.alt = '';
-            modalImageWrapper.style.display = 'none';
-        }
-
-        document.getElementById('modal').classList.add('active');
-    }
-
-    function closeModal() {
-        document.getElementById('modal').classList.remove('active');
-    }
-
-    document.getElementById('modal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeModal();
-        }
     });
+}
 
-    renderMenu();
+
+function openModal(item) {
+    document.getElementById('modalTitle').textContent = item.name;
+    document.getElementById('modalPrice').textContent = item.price;
+    document.getElementById('modalServes').textContent = item.serves ? item.serves : '';
+    document.getElementById('modalDescription').textContent = item.description || '';
+
+    const modalImage = document.getElementById('modalImage');
+    const modalImageWrapper = document.getElementById('modalImageWrapper');
+
+    if (item.image) {
+        modalImage.src = item.image;
+        modalImage.alt = item.name;
+        modalImageWrapper.style.display = 'flex';
+    } else {
+        modalImage.src = '';
+        modalImage.alt = '';
+        modalImageWrapper.style.display = 'none';
+    }
+
+    document.getElementById('modal').classList.add('active');
+}
+
+
+function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+}
+
+
+document.getElementById('modal').addEventListener('click', function (e) {
+    if (e.target === this) closeModal();
+});
+
+renderMenu();
 </script>
+
 
 
 </body>
 </html>
+
 
 
 
