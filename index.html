@@ -484,7 +484,7 @@
     </div>
 
     <script>
-        const menuData = {
+    const menuData = {
         fingerFood: [
             { name: 'Fajitas', price: '2.00€', description: 'Soft tortillas filled with seasoned meat and vegetables.'},
             { name: 'Mini Pizza', price: '1.25€', description: 'Mini bites with tomato sauce, cheese and toppings.', image:'image/mini-pizza.png' },
@@ -530,64 +530,65 @@
         ]
     };
 
-        function renderMenu() {
-            Object.keys(menuData).forEach(category => {
-                const container = document.getElementById(category);
-                menuData[category].forEach(item => {
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'menu-item';
-                    itemDiv.onclick = () => openModal(item);
+    function renderMenu() {
+        Object.keys(menuData).forEach(category => {
+            const container = document.getElementById(category);
+            menuData[category].forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'menu-item';
+                itemDiv.onclick = () => openModal(item);
 
-                    itemDiv.innerHTML = `
-                        <div class="menu-item-header">
-                            <h3>${item.name}</h3>
-                            <span class="price">${item.price}</span>
-                        </div>
-                        ${item.serves ? `<div class="serves">${item.serves}</div>` : ''}
-                        ${item.description ? `<p class="item-desc">${item.description}</p>` : ''}
-                    `;
+                itemDiv.innerHTML = `
+                    <div class="menu-item-header">
+                        <h3>${item.name} ${item.image ? '<span class="photo-indicator">🖼️</span>' : ''}</h3>
+                        <span class="price">${item.price}</span>
+                    </div>
+                    ${item.serves ? `<div class="serves">${item.serves}</div>` : ''}
+                    ${item.description ? `<p class="item-desc">${item.description}</p>` : ''}
+                `;
 
-                    container.appendChild(itemDiv);
-                });
+                container.appendChild(itemDiv);
             });
-        }
-
-        function openModal(item) {
-            document.getElementById('modalTitle').textContent = item.name;
-            document.getElementById('modalPrice').textContent = item.price;
-            document.getElementById('modalServes').textContent = item.serves ? item.serves : '';
-            document.getElementById('modalDescription').textContent = item.description || '';
-
-            const modalImage = document.getElementById('modalImage');
-            const modalImageWrapper = document.getElementById('modalImageWrapper');
-
-            if (item.image) {
-                modalImage.src = item.image;
-                modalImage.alt = item.name;
-                modalImageWrapper.style.display = 'flex';
-            } else {
-                modalImage.src = '';
-                modalImage.alt = '';
-                modalImageWrapper.style.display = 'none';
-            }
-
-            document.getElementById('modal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('modal').classList.remove('active');
-        }
-
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
         });
+    }
 
-        renderMenu();
-    </script>
+    function openModal(item) {
+        document.getElementById('modalTitle').textContent = item.name;
+        document.getElementById('modalPrice').textContent = item.price;
+        document.getElementById('modalServes').textContent = item.serves ? item.serves : '';
+        document.getElementById('modalDescription').textContent = item.description || '';
+
+        const modalImage = document.getElementById('modalImage');
+        const modalImageWrapper = document.getElementById('modalImageWrapper');
+
+        if (item.image) {
+            modalImage.src = item.image;
+            modalImage.alt = item.name;
+            modalImageWrapper.style.display = 'flex';
+        } else {
+            modalImage.src = '';
+            modalImage.alt = '';
+            modalImageWrapper.style.display = 'none';
+        }
+
+        document.getElementById('modal').classList.add('active');
+    }
+
+    function closeModal() {
+        document.getElementById('modal').classList.remove('active');
+    }
+
+    document.getElementById('modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+
+    renderMenu();
+</script>
 </body>
 </html>
+
 
 
 
