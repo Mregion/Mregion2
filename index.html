@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catering Menu</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,13 +15,9 @@
             color: #333;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto 40px auto;
-        }
+        .container { max-width: 1200px; margin: 0 auto 40px auto; }
 
         /* HEADER */
-
         .header {
             background: linear-gradient(135deg, #ffffff 0%, #fff5fb 40%, #f7f3ff 100%);
             border-radius: 28px;
@@ -43,15 +35,10 @@
             margin-bottom: 16px;
         }
 
-        .brand-left {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
+        .brand-left { display: flex; align-items: center; gap: 14px; }
 
         .logo-circle {
-            width: 56px;
-            height: 56px;
+            width: 56px; height: 56px;
             border-radius: 50%;
             overflow: hidden;
             background: #ffe4f0;
@@ -60,12 +47,7 @@
             justify-content: center;
             border: 2px solid #f8bbd0;
         }
-
-        .logo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
 
         .brand-text-main {
             font-size: 1.4em;
@@ -77,11 +59,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        .brand-text-sub {
-            font-size: 0.85em;
-            color: #888;
-        }
+        .brand-text-sub { font-size: 0.85em; color: #888; }
 
         .header h1 {
             font-size: 2.4em;
@@ -98,11 +76,7 @@
             text-align: center;
         }
 
-        .reservation-row {
-            display: flex;
-            justify-content: center;
-            margin-top: 6px;
-        }
+        .reservation-row { display: flex; justify-content: center; margin-top: 6px; }
 
         .reservation-badge {
             background: #fff;
@@ -114,13 +88,11 @@
             border: 1px solid #ffd1e1;
             gap: 2px;
         }
-
         .reservation-badge p:first-child {
             color: #d81b60;
             font-weight: 600;
             font-size: 0.95em;
         }
-
         .reservation-badge p:last-child {
             color: #888;
             font-size: 0.85em;
@@ -128,21 +100,12 @@
         }
 
         /* SECTION TITLES */
+        .section { margin-bottom: 40px; }
 
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
+        .section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
 
         .section-icon {
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             border-radius: 14px;
             display: flex;
             align-items: center;
@@ -151,10 +114,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .section-title h2 {
-            font-size: 1.7em;
-            color: #333;
-        }
+        .section-title h2 { font-size: 1.7em; color: #333; }
 
         .section-note {
             color: #777;
@@ -169,7 +129,6 @@
         .section-icon.desserts { background: #e6f4ff; }
 
         /* GRID & CARDS */
-
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -202,11 +161,7 @@
             gap: 8px;
         }
 
-        .menu-item h3 {
-            font-size: 1.05em;
-            color: #333;
-            font-weight: 600;
-        }
+        .menu-item h3 { font-size: 1.05em; color: #333; font-weight: 600; }
 
         .menu-item .price {
             color: #f06292;
@@ -215,19 +170,11 @@
             white-space: nowrap;
         }
 
-        .menu-item .serves {
-            color: #9b9b9b;
-            font-size: 0.8em;
-        }
+        .menu-item .serves { color: #9b9b9b; font-size: 0.8em; }
 
-        .item-desc {
-            font-size: 0.85em;
-            color: #777;
-            margin-top: 2px;
-        }
+        .item-desc { font-size: 0.85em; color: #777; margin-top: 2px; }
 
         /* MODAL */
-
         .modal {
             display: none;
             position: fixed;
@@ -256,14 +203,8 @@
         }
 
         @keyframes popIn {
-            from {
-                transform: translateY(10px) scale(0.97);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
+            from { transform: translateY(10px) scale(0.97); opacity: 0; }
+            to   { transform: translateY(0) scale(1); opacity: 1; }
         }
 
         .modal-header {
@@ -279,10 +220,7 @@
             z-index: 2;
         }
 
-        .modal-header h2 {
-            font-size: 1.7em;
-            color: #333;
-        }
+        .modal-header h2 { font-size: 1.7em; color: #333; }
 
         .modal-header .price {
             font-size: 1.4em;
@@ -291,11 +229,7 @@
             margin-top: 6px;
         }
 
-        .modal-header .serves {
-            color: #666;
-            font-size: 0.9em;
-            margin-top: 4px;
-        }
+        .modal-header .serves { color: #666; font-size: 0.9em; margin-top: 4px; }
 
         .close-btn {
             background: #ffffff;
@@ -310,36 +244,83 @@
             justify-content: center;
             transition: background 0.2s;
         }
+        .close-btn:hover { background: #f8c6db; }
 
-        .close-btn:hover {
-            background: #f8c6db;
+        .modal-body { padding: 22px 26px 26px 26px; }
+
+        .image-placeholder {
+            width: 100%;
+            background: #fdf6fa;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            border: 1px solid #f0d4df;
+            overflow: hidden;
+            padding: 0;
         }
 
-        .modal-body {
-            padding: 22px 26px 26px 26px;
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            display: block;
+            border-radius: 16px;
         }
 
-.image-placeholder {
-    width: 100%;
-    background: #fdf6fa;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 22px;
-    border: 1px solid #f0d4df;
-    overflow: hidden;
-    padding: 0;
-}
+        /* ✅ MINI CAROUSEL (2+ images) */
+        .carousel {
+            position: relative;
+            width: 100%;
+        }
+        .carousel-track {
+            width: 100%;
+            position: relative;
+        }
+        .carousel-img {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            display: none;
+        }
+        .carousel-img.active { display: block; }
 
-.modal-image {
-    width: 100%;
-    height: auto;
-    max-height: 85vh;
-    object-fit: contain;
-    display: block;
-    border-radius: 16px;
-}
+        .car-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(0,0,0,0.08);
+            width: 36px;
+            height: 36px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+        .car-btn:hover { background: #fff; }
+        .car-prev { left: 10px; }
+        .car-next { right: 10px; }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 0 4px;
+        }
+        .dot {
+            width: 8px; height: 8px;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.20);
+            cursor: pointer;
+        }
+        .dot.active { background: #f06292; }
 
         .detail-section h3 {
             font-size: 1.2em;
@@ -355,38 +336,20 @@
             background: #fff5fa;
             font-size: 0.95em;
         }
-.highlight-red {
-  color: red;
-  font-weight: bold;
-}
+
+        .highlight-red { color: red; font-weight: bold; }
 
         @media (max-width: 768px) {
-            body {
-                padding: 16px;
-            }
-
-            .header {
-                padding: 22px 18px 18px 18px;
-            }
-
-            .brand-row {
-                flex-direction: row;
-                align-items: center;
-            }
-
-            .header h1 {
-                font-size: 2.1em;
-            }
-
-            .modal {
-                padding: 16px;
-            }
+            body { padding: 16px; }
+            .header { padding: 22px 18px 18px 18px; }
+            .brand-row { flex-direction: row; align-items: center; }
+            .header h1 { font-size: 2.1em; }
+            .modal { padding: 16px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header with logo + brand -->
         <div class="header">
             <div class="brand-row">
                 <div class="brand-left">
@@ -411,7 +374,6 @@
             </div>
         </div>
 
-        <!-- Finger Food Section -->
         <div class="section">
             <div class="section-title">
                 <div class="section-icon finger">🍢</div>
@@ -423,20 +385,18 @@
             <div class="menu-grid" id="fingerFood"></div>
         </div>
 
-        <!-- Mini Cups Section -->
         <div class="section">
             <div class="section-title">
                 <div class="section-icon cups">🥣</div>
                 <h2>Mini Cups</h2>
             </div>
             <p class="section-note">
-                Prices are <strong>per piece</strong>, with a minimum of <strong>12 cups per recipe</strong>. 
+                Prices are <strong>per piece</strong>, with a minimum of <strong>12 cups per recipe</strong>.
                 Can be served in cups, arranged on plates, or in <em>jattat</em>.
             </p>
             <div class="menu-grid" id="miniCups"></div>
         </div>
 
-        <!-- Mains Section -->
         <div class="section">
             <div class="section-title">
                 <div class="section-icon mains">🍽️</div>
@@ -448,7 +408,6 @@
             <div class="menu-grid" id="mains"></div>
         </div>
 
-        <!-- Desserts Section -->
         <div class="section">
             <div class="section-title">
                 <div class="section-icon desserts">🧁</div>
@@ -474,7 +433,8 @@
             </div>
             <div class="modal-body">
                 <div class="image-placeholder" id="modalImageWrapper">
-                    <img id="modalImage" class="modal-image" src="" alt="Dish image">
+                    <!-- ✅ We will inject either 1 image or a carousel here -->
+                    <div id="modalMedia"></div>
                 </div>
 
                 <div class="detail-section">
@@ -500,11 +460,9 @@
                 { name: 'Honey Chicken Burger', price: '2.00€', description: 'Honey-glazed chicken mini burger. "Photo coming soon :)"' },
                 { name: 'Fajitas', price: '2.00€', description: 'Soft tortillas filled with seasoned meat and vegetables. "Photo coming soon :)"'},
                 { name: 'Crispy Bites', price: '2.00€', description: 'Assorted crunchy appetisers with dipping sauces. "Photo coming soon :)"' },
-                
             ],
 
             miniCups: [
-                
                 { name: 'Hommus', price: '1.00€', description: 'Creamy hummus in mini cups.', image: 'image/hommus.png' },
                 { name: 'Baba Ganoug', price: '1.00€', description: 'Smoky aubergine dip.', image: 'image/baba-ganoug.png' },
                 { name: 'Fattoush', price: '1.25€', description: 'Fresh salad with toasted bread.', image: 'image/fattoush.png' },
@@ -516,7 +474,6 @@
             ],
 
             mains: [
-    
                 { name: 'Chicken Shawrma', price: '40€', description: 'Marinated chicken slices.', serves: 'Serves 12-15 persons', image: 'image/chicken-shawrma.png' },
                 { name: 'Beef Shawrma', price: '45€', description: 'Marinated sliced beef.', serves: 'Serves 12-15 persons', image: 'image/beef-shawrma.png' },
                 { name: 'Chicken Mansaf', price: '45€', description: 'Rice topped with chicken and yoghurt sauce.', serves: 'Serves 12-15 persons', image: 'image/chicken-mansaf.png' },
@@ -526,10 +483,11 @@
             ],
 
             desserts: [
-                
                 { name: 'Brownies', price: '1.50€', description: 'Rich fudgy brownies. "Photo coming soon :)"' },
                 { name: 'Tiramisu', price: '2.00€', description: 'Classic tiramisu in cups. "Photo coming soon :)"' },
-{
+
+                /* ✅ Cheesecake with TWO photos */
+                {
                   name: 'Cheesecake',
                   price: '2.25€',
                   description: 'Cheesecake cups: Lotus, strawberry, blueberry + Oreo option.',
@@ -538,6 +496,7 @@
                     'image/cheesecake.png'        // Oreo cheesecake
                   ]
                 },
+
                 { name: 'Pancake Bites', price: '1.50€', description: 'Mini pancake pieces. "Photo coming soon :)"' },
                 { name: 'Ferrero Chocolate Cake Cups', price: '2.00€', description: 'Moist chocolate cake cups. "Photo coming soon :)"' },
                 { name: 'Fraisier Cake Cups', price: '2.00€', description: 'Strawberry cream cake cups. "Photo coming soon :)"' },
@@ -568,22 +527,89 @@
             });
         }
 
+        // Simple carousel state (only one open modal at a time)
+        let carIndex = 0;
+        let carImgs = [];
+
+        function renderCarousel(images, altText){
+          carIndex = 0;
+          carImgs = images.slice();
+
+          const imgsHtml = carImgs.map((src, i) => `
+            <img class="carousel-img ${i===0 ? 'active':''}" src="${src}" alt="${altText} ${i+1}">
+          `).join("");
+
+          const dotsHtml = carImgs.map((_, i) => `
+            <span class="dot ${i===0 ? 'active':''}" onclick="goToSlide(${i})"></span>
+          `).join("");
+
+          return `
+            <div class="carousel">
+              <div class="carousel-track">
+                ${imgsHtml}
+              </div>
+
+              <div class="car-btn car-prev" onclick="prevSlide()">‹</div>
+              <div class="car-btn car-next" onclick="nextSlide()">›</div>
+
+              <div class="dots">
+                ${dotsHtml}
+              </div>
+            </div>
+          `;
+        }
+
+        function updateCarousel(){
+          const imgs = document.querySelectorAll('.carousel-img');
+          const dots = document.querySelectorAll('.dot');
+          imgs.forEach((img, i) => img.classList.toggle('active', i === carIndex));
+          dots.forEach((d, i) => d.classList.toggle('active', i === carIndex));
+        }
+
+        function prevSlide(){
+          if(!carImgs.length) return;
+          carIndex = (carIndex - 1 + carImgs.length) % carImgs.length;
+          updateCarousel();
+        }
+
+        function nextSlide(){
+          if(!carImgs.length) return;
+          carIndex = (carIndex + 1) % carImgs.length;
+          updateCarousel();
+        }
+
+        function goToSlide(i){
+          if(!carImgs.length) return;
+          carIndex = i;
+          updateCarousel();
+        }
+
         function openModal(item) {
             document.getElementById('modalTitle').textContent = item.name;
             document.getElementById('modalPrice').textContent = item.price;
             document.getElementById('modalServes').textContent = item.serves ? item.serves : '';
-            document.getElementById('modalDescription').textContent = item.description || '';
 
-            const modalImage = document.getElementById('modalImage');
+            // ✅ Keep HTML formatting like your red highlight (use innerHTML)
+            document.getElementById('modalDescription').innerHTML = item.description || '';
+
             const modalImageWrapper = document.getElementById('modalImageWrapper');
+            const modalMedia = document.getElementById('modalMedia');
 
-            if (item.image) {
-                modalImage.src = item.image;
-                modalImage.alt = item.name;
+            // Reset
+            modalMedia.innerHTML = '';
+            carImgs = [];
+            carIndex = 0;
+
+            // ✅ If multiple images exist -> carousel
+            if (item.images && Array.isArray(item.images) && item.images.length > 0) {
+                modalMedia.innerHTML = renderCarousel(item.images, item.name);
+                modalImageWrapper.style.display = 'flex';
+            }
+            // ✅ else fallback to single image
+            else if (item.image) {
+                modalMedia.innerHTML = `<img class="modal-image" src="${item.image}" alt="${item.name}">`;
                 modalImageWrapper.style.display = 'flex';
             } else {
-                modalImage.src = '';
-                modalImage.alt = '';
                 modalImageWrapper.style.display = 'none';
             }
 
@@ -604,30 +630,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
