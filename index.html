@@ -529,7 +529,15 @@
                 
                 { name: 'Brownies', price: '1.50€', description: 'Rich fudgy brownies. "Photo coming soon :)"' },
                 { name: 'Tiramisu', price: '2.00€', description: 'Classic tiramisu in cups. "Photo coming soon :)"' },
-                { name: 'Cheesecake', price: '2.25€', description: 'Cheesecake cups: Lotus, strawberry, blueberry.', image: 'image/cheesecake.png' },
+{
+                  name: 'Cheesecake',
+                  price: '2.25€',
+                  description: 'Cheesecake cups: Lotus, strawberry, blueberry + Oreo option.',
+                  images: [
+                    'image/cheesecake_lotus_mix.png',  // Lotus - blueberry - strawberry cheesecake
+                    'image/cheesecake_oreo.png'        // Oreo cheesecake
+                  ]
+                },
                 { name: 'Pancake Bites', price: '1.50€', description: 'Mini pancake pieces. "Photo coming soon :)"' },
                 { name: 'Ferrero Chocolate Cake Cups', price: '2.00€', description: 'Moist chocolate cake cups. "Photo coming soon :)"' },
                 { name: 'Fraisier Cake Cups', price: '2.00€', description: 'Strawberry cream cake cups. "Photo coming soon :)"' },
@@ -596,6 +604,7 @@
     </script>
 </body>
 </html>
+
 
 
 
