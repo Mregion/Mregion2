@@ -127,7 +127,8 @@
         .section-icon.cups     { background: #efe3ff; }
         .section-icon.mains    { background: #ffe7da; }
         .section-icon.desserts { background: #e6f4ff; }
-
+        .section-icon.lebanese { background: #fff0d9; }
+        
         /* GRID & CARDS */
         .menu-grid {
             display: grid;
@@ -409,6 +410,17 @@
         </div>
 
         <div class="section">
+    <div class="section-title">
+        <div class="section-icon lebanese">🥮</div>
+        <h2>Lebanese Desserts</h2>
+    </div>
+    <p class="section-note">
+        Traditional Lebanese sweets. Some items are sold per platter, per dozen, or by weight.
+    </p>
+    <div class="menu-grid" id="lebaneseDesserts"></div>
+</div>
+        
+        <div class="section">
             <div class="section-title">
                 <div class="section-icon desserts">🧁</div>
                 <h2>Dessert Bites</h2>
@@ -482,6 +494,39 @@
                 { name: 'Beef Kabseh', price: '50€', description: 'Spiced rice with beef.', serves: 'Serves 12-15 persons (2 Large Trays)', image: 'image/beef-kabseh.png' }
             ],
 
+lebaneseDesserts: [
+    {
+        name: 'Halewet el Jebn',
+        price: '20€',
+        description: '500–600 grams / around 23 pieces.',
+        image: 'image/1.jpeg'
+    },
+    {
+        name: 'Osmaliyeh',
+        price: '2€ / piece',
+        description: '26 cm platter / or a minimum of 6 pieces. <span class="highlight-red">20€ / platter</span>',
+        image: 'image/2.jpeg'
+    },
+    {
+        name: 'Mafroukeh Pistache',
+        price: '25€',
+        description: '500–600 grams.',
+        image: 'image/3.jpeg'
+    },
+    {
+        name: 'Qatayef Asafiri',
+        price: '18€ / platter',
+        description: '20 pieces per platter.',
+        image: 'image/4.jpeg'
+    },
+    {
+        name: 'Fried Qatayef',
+        price: '18€ / dozen',
+        description: 'Cheese / Ashta / Walnuts selection.',
+        image: 'image/5.jpeg'
+    }
+],
+            
             desserts: [
                 { name: 'Brownies', price: '1.50€', description: 'Rich fudgy brownies.', image: 'image/brownies.png' },
                 { name: 'Tiramisu', price: '2.00€', description: 'Classic tiramisu in cups. "Photo coming soon :)"' },
@@ -630,7 +675,6 @@
     </script>
 </body>
 </html>
-
 
 
 
